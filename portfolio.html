@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brady Wood | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #2c3954;
+      --secondary-color: #6fa8ff;
+      --text-color: #e3e8f0;
+      --accent-color: #ffe082;
+      --bg-gradient: linear-gradient(135deg, var(--primary-color) 0%, #3a4a6b 100%);
+      --header-height: 60px;
+    }
+    
+    .nav-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      height: var(--header-height);
+      background: rgba(44,57,84,0.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      border-bottom: 1px solid rgba(111,168,255,0.2);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    
+    .nav-link {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 10px 18px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      position: relative;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+    
+    .nav-link:hover {
+      color: var(--secondary-color);
+      background: rgba(111,168,255,0.12);
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--secondary-color);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover::after {
+      width: 80%;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Lato', Arial, sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-color);
+      line-height: 1.8;
+      letter-spacing: 0.2px;
+    }
+    .main-header {
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary-color) 0%, #3a4a6b 100%);
+      color: #fff;
+      text-align: center;
+      padding: 70px 0 50px 0;
+      font-family: 'Merriweather', serif;
+      font-size: 3.2rem;
+      letter-spacing: 2px;
+      font-weight: 700;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      margin-bottom: 0;
+      position: relative;
+      z-index: 0;
+      margin-top: -1px;
+    }
+    
+    .main-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--secondary-color);
+      border-radius: 2px;
+    }
+    .intro {
+      max-width: 1000px;
+      margin: 60px auto;
+      background: linear-gradient(145deg, #34415c 0%, #2a3547 100%);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      padding: 60px 50px;
+      text-align: center;
+      border: 1px solid rgba(111,168,255,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .intro::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    }
+    .intro h2 {
+      color: #6fa8ff;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+    }
+    .intro p {
+      font-size: 1.1rem;
+      margin-bottom: 0;
+      color: #e3e8f0;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      margin-bottom: 24px;
+      border: 3px solid #6fa8ff;
+    }
+    .section {
+      max-width: 1200px;
+      margin: 60px auto;
+      background: #34415c;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      padding: 50px 40px;
+      border-left: 6px solid var(--secondary-color);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle at center, rgba(111,168,255,0.08) 0%, transparent 70%);
+      transform: translate(80px, -80px);
+      pointer-events: none;
+    }
+    
+    .section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+    }
+    .section h2 {
+      color: #ffffff;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      font-family: 'Merriweather', serif;
+      position: relative;
+      padding-bottom: 12px;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+    }
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: currentColor;
+      border-radius: 2px;
+    }
+    .keywords {
+      display: flex;
+      gap: 8px;
+      margin: 8px 0 20px 0;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+      grid-column: 1 / -1;
+    }
+    
+    .section > .keywords {
+      margin-bottom: 40px;
+    }
+    .keyword {
+      background: rgba(111,168,255,0.12);
+      padding: 8px 16px;
+      border-radius: 6px;
+      border: 1px solid rgba(111,168,255,0.2);
+      transition: all 0.2s ease;
+      color: rgba(227,232,240,0.95);
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      font-size: 0.9rem;
+    }
+    .keyword:hover {
+      background: rgba(111,168,255,0.18);
+      border-color: rgba(111,168,255,0.35);
+      transform: translateY(-1px);
+      color: #ffffff;
+    }
+    .section.professional {
+      border-left-color: #6fa8ff;
+    }
+    .section.professional h2 {
+      color: #6fa8ff;
+    }
+    .section.leadership {
+      border-left-color: #ffe082;
+    }
+    .section.leadership h2 {
+      color: #ffe082;
+    }
+    .section.personal {
+      border-left-color: #ff8a65;
+    }
+    .section.personal h2 {
+      color: #ff8a65;
+    }
+    @media (max-width: 600px) {
+      .main-header {
+        font-size: 1.5rem;
+        padding: 22px 0 12px 0;
+      }
+      .intro, .section {
+        padding: 24px 8px;
+      }
+      .intro h2, .section h2 {
+        font-size: 1.2rem;
+      }
+      .profile-img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+    .slideshow {
+      position: relative;
+      max-width: 320px;
+      height: 240px;
+      margin: 12px 0 18px 0;
+      text-align: center;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+      background: rgba(44,57,84,0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .slideshow:hover {
+      transform: scale(1.02);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+    }
+    .slide {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      background-color: rgba(44,57,84,0.2);
+    }
+    
+    .slide.prev {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    
+    .slide.active {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    
+    .slideshow:hover .slide.active {
+      transform: scale(1.05) translateX(0);
+    }
+    .slideshow .prev, .slideshow .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      margin-top: -20px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 18px;
+      border: none;
+      background: rgba(44,57,84,0.7);
+      border-radius: 50%;
+      user-select: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+    }
+    
+    .slideshow:hover .prev,
+    .slideshow:hover .next {
+      opacity: 1;
+    }
+    
+    .slideshow .prev:hover,
+    .slideshow .next:hover {
+      background: var(--secondary-color);
+      transform: scale(1.1);
+    }
+    .slideshow .prev:hover, .slideshow .next:hover {
+      background: #6fa8ff;
+    }
+    .slideshow .prev {
+      left: 0;
+    }
+    .slideshow .next {
+      right: 0;
+    }
+    .experience {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 30px;
+      margin-bottom: 50px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      padding: 35px;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .experience:hover {
+      background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    
+    .experience h3 {
+      margin: 0;
+      font-size: 1.4rem;
+      color: var(--secondary-color);
+      position: relative;
+      padding-bottom: 12px;
+      font-family: 'Merriweather', serif;
+      letter-spacing: 0.3px;
+      grid-column: 1 / -1;
+      font-weight: 700;
+    }
+    
+    .experience h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--secondary-color);
+      border-radius: 1px;
+    }
+    .experience .slideshow {
+      position: relative;
+      max-width: 320px;
+      width: 100%;
+      height: 240px;
+      margin: 0;
+      text-align: center;
+      overflow: hidden;
+      flex: 0 0 320px;
+      border-radius: 10px;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(44,57,84,0.18);
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(44,57,84,0.2);
+    }
+    .slide.active {
+      display: block;
+    }
+    .experience p {
+      margin: 0;
+      padding: 20px 25px;
+      line-height: 1.7;
+      color: rgba(227,232,240,0.95);
+      font-size: 1rem;
+      letter-spacing: 0.2px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.05);
+      grid-column: 2;
+    }
+    
+    .experience p strong {
+      color: var(--secondary-color);
+      font-weight: 600;
+    }
+    .section.timeline {
+      overflow-x: auto;
+      padding-bottom: 20px;
+    }
+
+    .gantt-chart {
+      min-width: 800px;
+      margin: 20px 0;
+      font-size: 0.9rem;
+    }
+
+    .gantt-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .gantt-side {
+      padding: 12px;
+      font-weight: 500;
+      color: var(--text-color);
+    }
+
+    .gantt-timeline {
+      display: grid;
+      grid-template-columns: repeat(24, 1fr);
+      gap: 0;
+      position: relative;
+      padding: 12px 0;
+    }
+
+    .year-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+    }
+
+    .year-column {
+      display: grid;
+      grid-template-rows: auto auto;
+    }
+
+    .year {
+      padding: 8px 4px;
+      text-align: center;
+      font-size: 1rem;
+      color: var(--secondary-color);
+      font-weight: bold;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .year-months {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    .month {
+      padding: 4px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(227,232,240,0.7);
+      border-left: 1px solid rgba(255,255,255,0.1);
+      white-space: nowrap;
+    }
+
+    .bar {
+      position: absolute;
+      height: 20px;
+      background: linear-gradient(90deg, var(--secondary-color), #4a90e2);
+      border-radius: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.8;
+      transition: all 0.3s ease;
+    }
+
+    .gantt-timeline {
+      position: relative;
+    }
+
+    .bar:hover {
+      opacity: 1;
+      transform: translateY(-50%) scale(1.02);
+    }
+
+    .gantt-header .gantt-row {
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+      font-weight: bold;
+    }
+
+    @media (max-width: 1000px) {
+      .section {
+        padding: 40px 25px;
+        margin: 40px 20px;
+      }
+      .experience {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+        gap: 25px;
+      }
+      .experience h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+      }
+      .experience p {
+        padding: 15px 20px;
+        font-size: 1rem;
+        grid-column: 1;
+      }
+      .experience .slideshow {
+        width: 100%;
+        height: 220px;
+        margin: 0 auto;
+        grid-column: 1;
+      }
+      .keywords {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav-header">
+    <a href="#intro" class="nav-link">Intro</a>
+    <a href="#professional" class="nav-link">Professional</a>
+    <a href="#leadership" class="nav-link">Leadership</a>
+    <a href="#personal" class="nav-link">Personal</a>
+    <a href="#timeline" class="nav-link">Timeline</a>
+  </nav>
+  <div class="main-header">Brady Wood</div>
+  <section class="intro" id="intro">
+    <img src="image1.png" alt="Brady Wood" class="profile-img">
+    <h2>Welcome to My Portfolio</h2>
+    <p>
+      Hi, I'm Brady Wood—a Mechanical Engineering student, MBA candidate, and problem solver. I have a passion for curiosity 
+      and leading teams to deliver exceptional results. Explore my work, experience, and projects below!
+    </p>
+  </section>
+
+  <section class="section professional" id="professional">
+    <h2>Professional Development</h2>
+
+    <div class="experience">
+      <h3>Estimating Internship</h3>
+      <div class="keywords">
+        <span class="keyword">Solar Energy</span>
+        <span class="keyword">Project Management</span>
+        <span class="keyword">Software Development</span>
+      </div>
+      <div style="display: flex; justify-content: center; margin: 12px 0 18px 0;">
+        <img src="Mortenson/Screenshot 2025-08-26 083631.png" alt="Mortenson Photo" style="max-width: 280px; height: 200px; object-fit: contain; border-radius: 16px; box-shadow: 0 12px 40px rgba(0,0,0,0.25);">
+      </div>
+      <p>As a Solar Estimating Intern at Mortenson, I directed a medium voltage (MV) cable 
+        optimization project, collaborating closely with Engineering, AI Development, and Innovation teams. 
+        Through this initiative, my team developed MV optimization software that delivered
+        savings of $2.55 million across 7 projects and reduced AC cable costs by an average of 5% per project.
+        These new Python workflows decreased time spent on solar MV Layouts by 88%.
+        Beyond technical contributions, I partnered with executive leadership through a series of interviews 
+        to gather insights from both field and corporate perspectives. 
+      </p>
+    </div>
+    <div class="experience">
+      <h3>Wood Consulting</h3>
+      <div class="keywords">
+        <span class="keyword">Strategy</span>
+        <span class="keyword">Analysis</span>
+        <span class="keyword">Problem Solving</span>
+      </div>
+      <div style="display: flex; justify-content: center; margin: 12px 0 18px 0;">
+        <img src="WOOD%20Consulting/IMG_0557.jpg" alt="Wood Consulting Photo" style="max-width: 280px; height: 200px; object-fit: contain; border-radius: 16px; box-shadow: 0 12px 40px rgba(0,0,0,0.25);">
+      </div>
+      <p>Over the summer of 2025, I served as a Project Manager for a self-started project in Minneapolis,
+        where I led a strategy consulting engagement with a small business in the area. Working closely with the owners, we developed and implemented
+        marketing, production, and data analysis strategies which helped the client achieve a 90% profit increase 
+        from Q2 to Q3. This role allowed me to combine problem solving with hands on business strategy, driving measurable 
+        results for a growing company.
+      </p>
+    </div>
+    <div class="experience">
+      <h3>Engineering MBA Acceptance</h3>
+      <div class="keywords">
+        <span class="keyword">Business</span>
+        <span class="keyword">Engineering</span>
+        <span class="keyword">Academic Excellence</span>
+      </div>
+      <div style="display: flex; justify-content: center; margin: 12px 0 18px 0;">
+        <img src="Engineering%20MBA/IMG_0496.jpg" alt="MBA Acceptance Photo" style="max-width: 320px; height: 240px; object-fit: contain; border-radius: 16px; box-shadow: 0 12px 40px rgba(0,0,0,0.25);">
+      </div>
+      <p>Accepted into Texas A&M's competitive Engineering MBA program, combining technical engineering expertise with strategic business acumen. This program bridges the gap between engineering innovation and business leadership, preparing me for varying roles in technology driven industries.</p>
+    </div>
+    <div class="experience">
+      <h3>Study Abroad Experience</h3>
+      <div class="keywords">
+        <span class="keyword">Global Perspective</span>
+        <span class="keyword">Cultural Exchange</span>
+        <span class="keyword">International Engineering</span>
+      </div>
+      <div class="slideshow" id="slideshow-abroad">
+        <img src="Study%20Abroad/IMG_0481.jpg" alt="Abroad Photo 1" class="slide active">
+        <img src="Study%20Abroad/IMG_0482.jpg" alt="Abroad Photo 2" class="slide">
+        <img src="Study%20Abroad/IMG_0483.jpg" alt="Abroad Photo 3" class="slide">
+        <img src="Study%20Abroad/IMG_4573.jpg" alt="Abroad Photo 4" class="slide">
+        <img src="Study%20Abroad/IMG_4619.jpg" alt="Abroad Photo 5" class="slide">
+        <button class="prev" onclick="plusSlides('slideshow-abroad', -1)">&#10094;</button>
+        <button class="next" onclick="plusSlides('slideshow-abroad', 1)">&#10095;</button>
+      </div>
+      <p>During a study abroad experience in Aix-en-Provence, I met engineering and culture by studying solid mechanics within French engineering systems and collaborating with cross-cultural teams of American and French students. We also completed a site visit to ArcelorMittal, gaining real world insight into industrial applications of the concepts we studied in class.</p>
+    </div>
+    <div class="experience">
+      <h3>Biomechanical Environments Laboratories Research</h3>
+      <div class="keywords">
+        <span class="keyword">Biomedical Research</span>
+        <span class="keyword">Iterative Design</span>
+        <span class="keyword">Technical Innovation</span>
+      </div>
+      <div class="slideshow" id="slideshow-bio">
+        <img src="BMEL/Screenshot 2025-07-21 211156.png" alt="Research Photo 1" class="slide active">
+        <img src="BMEL/Screenshot 2025-07-21 211007.png" alt="Research Photo 2" class="slide">
+        <img src="BMEL/IMG_0475.jpg" alt="Research Photo 3" class="slide">
+        <button class="prev" onclick="plusSlides('slideshow-bio', -1)">&#10094;</button>
+        <button class="next" onclick="plusSlides('slideshow-bio', 1)">&#10095;</button>
+      </div>
+      <p>As an Undergraduate Researcher at the Biomechanical Environments Laboratory, I contributed to LVAD research aimed at improving 
+        surgery outcomes for 800+ patients annually. I co-led the creation of a mock circulatory flow loop replicating in-vivo heart 
+        conditions to evaluate LVAD insertion strategies. To enable particle image velocimetry (PIV), we matched the refractive indexes 
+        of 3D printing left ventricle models and blood-mimicking fluids through iterative experimentation.
+      </p>
+    </div>
+    <p></p>
+  </section>
+
+  <section class="section leadership" id="leadership">
+    <h2>Leadership Experience</h2>
+
+    </div>
+    <div class="experience">
+      <h3>SAIL Summit Spring '25</h3>
+      <div class="keywords">
+        <span class="keyword">Founding Tradition</span>
+        <span class="keyword">Team Leadership</span>
+        <span class="keyword">Outdoor Skills</span>
+      </div>
+      <div class="slideshow" id="slideshow-sailspring">
+        <img src="Summit%20Spring%20%2725/IMG_0478.jpg" alt="SAIL Spring Summit Photo 4" class="slide active">
+        <img src="Summit%20Spring%20%2725/IMG_0094.jpg" alt="SAIL Spring Summit Photo 1" class="slide">
+        <img src="Summit%20Spring%20%2725/IMG_0098.jpg" alt="SAIL Spring Summit Photo 2" class="slide">
+        <img src="Summit%20Spring%20%2725/IMG_0278.jpg" alt="SAIL Spring Summit Photo 3" class="slide">
+        <img src="Summit%20Spring%20%2725/IMG_0479.jpg" alt="SAIL Spring Summit Photo 5" class="slide">
+        <img src="Summit%20Spring%20%2725/IMG_0480.jpg" alt="SAIL Spring Summit Photo 6" class="slide">
+        <button class="prev" onclick="plusSlides('slideshow-sailspring', -1)">&#10094;</button>
+        <button class="next" onclick="plusSlides('slideshow-sailspring', 1)">&#10095;</button>
+      </div>
+      <p>I guided 15 students through a 26 mile trek on the Eagle Rock Loop in Ouachita National Forest during three days of subfreezing temperatures and freezing rain. The extreme conditions tested everyone's preparation and resilience, we woke up to frozen camping gear, hiked through icy rain at night, and made constant adjustments to keep the group safe. We all made constant sacrifices to ensure the team stayed warm and hydrated; during the last 6 miles of our trip, I found myself carrying other team member's backpacks, hauling over 100 lbs of gear and giving up clothing layers to ensure everyone finished strong. Despite the challenges, our team completed the journey together where I capped off the experience by congratulating each participant with a handmade medal to commemorate the accomplishment.</p>
+    </div>
+    <div class="experience">
+      <h3>Slolympics</h3>
+      <div class="keywords">
+        <span class="keyword">Philanthropy</span>
+        <span class="keyword">Resource Management</span>
+        <span class="keyword">Community Building</span>
+      </div>
+      <div class="slideshow" id="slideshow-slolympics">
+        <img src="Slolympics/Screenshot 2025-08-27 215759.png" alt="Slolympics Photo 1" class="slide active">
+        <img src="Slolympics/Screenshot 2025-08-27 215822.png" alt="Slolympics Photo 2" class="slide">
+        <img src="Slolympics/Screenshot 2025-08-27 215846.png" alt="Slolympics Photo 3" class="slide">
+        <img src="Slolympics/Screenshot 2025-08-27 220217.png" alt="Slolympics Photo 4" class="slide">
+        <button class="prev" onclick="plusSlides('slideshow-slolympics', -1)">&#10094;</button>
+        <button class="next" onclick="plusSlides('slideshow-slolympics', 1)">&#10095;</button>
+      </div>
+      <p>I co-led the planning and execution of a 10-year tradition designed to bring together all sophomore leadership organizations at Texas A&M through a day of friendly competition. Our leadership committee secured an organization scholarship, making the event free for all participants for the first time in its history. My committee and I worked together to referee, point track, schedule, setup, and clean up the event. This was later praised as the "best SLOLYMPICS ever thrown" by a senior executive from another leadership organization.</p>
+    </div>
+    <div class="experience">
+      <h3>Halliburton Engineering Global Programs</h3>
+      <div class="keywords">
+        <span class="keyword">Public Speaking</span>
+        <span class="keyword">Global Education</span>
+        <span class="keyword">Student Mentoring</span>
+      </div>
+      <div class="slideshow" id="slideshow-halliburton">
+        <img src="HEGP/IMG_6561.jpg" alt="Halliburton Event Photo 1" class="slide active">
+        <img src="HEGP/IMG_0194.jpg" alt="Halliburton Event Photo 2" class="slide">
+        <button class="prev" onclick="plusSlides('slideshow-halliburton', -1)">&#10094;</button>
+        <button class="next" onclick="plusSlides('slideshow-halliburton', 1)">&#10095;</button>
+      </div>
+      <p>After returning from my transformative study abroad experience, I wanted to help other engineering students get closer to gaining the same experience. As a Global Ambassador for the Halliburton Engineering Global Programs, I became an advocate for international learning opportunities at Texas A&M.
+In this role, I led high-impact presentations to 200+ students, speaking on a panel alongside international business leaders to highlight the professional value of global competency. I also worked 1 on 1 with students during office hours to advise them on their future abroad experiences, helping them through the process and providing insight into what to expect.</p>
+    </div>
+    <div class="experience">
+      <h3>SAIL Summit Fall '24</h3>
+      <div class="keywords">
+        <span class="keyword">Expedition Planning</span>
+        <span class="keyword">Adaptability</span>
+        <span class="keyword">Risk Mitigation</span>
+      </div>
+      <div class="slideshow" id="slideshow-sailfall">
+        <img src="Summit%20Fall%2024/20241214_110642_8C183C.JPG" alt="SAIL Fall Summit Photo 1" class="slide active">
+        <img src="Summit%20Fall%2024/20241214_114951_8868A4.JPG" alt="SAIL Fall Summit Photo 2" class="slide">
+        <img src="Summit%20Fall%2024/IMG_0485.jpg" alt="SAIL Fall Summit Photo 3" class="slide">
+        <img src="Summit%20Fall%2024/IMG_0486.jpg" alt="SAIL Fall Summit Photo 4" class="slide">
+        <img src="Summit%20Fall%2024/IMG_0487.jpg" alt="SAIL Fall Summit Photo 5" class="slide">
+        <img src="Summit%20Fall%2024/IMG_0488.jpg" alt="SAIL Fall Summit Photo 6" class="slide">
+        <img src="Summit%20Fall%2024/IMG_0489.jpg" alt="SAIL Fall Summit Photo 7" class="slide">
+        <img src="Summit%20Fall%2024/IMG_0490.jpg" alt="SAIL Fall Summit Photo 8" class="slide">
+        <img src="Summit%20Fall%2024/IMG_0491.jpg" alt="SAIL Fall Summit Photo 9" class="slide">
+        <img src="Summit%20Fall%2024/IMG_0493.jpg" alt="SAIL Fall Summit Photo 10" class="slide">
+        <img src="Summit%20Fall%2024/IMG_0494.jpg" alt="SAIL Fall Summit Photo 11" class="slide">
+        <img src="Summit%20Fall%2024/IMG_0495.jpg" alt="SAIL Fall Summit Photo 12" class="slide">
+        <button class="prev" onclick="plusSlides('slideshow-sailfall', -1)">&#10094;</button>
+        <button class="next" onclick="plusSlides('slideshow-sailfall', 1)">&#10095;</button>
+      </div>
+      <p>During winter break of 2024, I brought my long standing dream to life by organizing a 4-day camping expedition to Big Bend National Park. This was an ambitious trip that ended up attracting 25 students, far exceeding the original goal of 5. The adventure included 16 hours of driving, 28 miles of hiking, 5000 feet of elevation gain, and only 15 hours of sleep across the entire trip for me and my co-leader.
+	The most rewarding accomplishment was achieving 100% team participation on both a 3 a.m. summit hike up to Emory Peak (4 miles) and a 16 mile hike around the South Rim Loop, even among participants who had never been hiking before. To ensure everyone's safety and success we managed food and water, and motivated the group through every challenge. This trip marked the completion of a leadership dream I had set 8 months prior, turning a small idea into my most memorable college accomplishment.</p>
+    </div>
+  </section>
+
+  <section class="section personal" id="personal">
+    <h2>Personal Accomplishments</h2>
+
+    <div class="experience">
+      <h3>The Woodlands Half Marathon</h3>
+      <div class="keywords">
+        <span class="keyword">Endurance</span>
+        <span class="keyword">Goal Setting</span>
+        <span class="keyword">Discipline</span>
+      </div>
+      <div class="slideshow" id="slideshow-halfmarathon">
+        <img src="Half%20Marathon/IMG_0051.jpg" alt="Half Marathon Photo 1" class="slide active">
+        <img src="Half%20Marathon/IMG_0284%20%281%29.jpg" alt="Half Marathon Photo 2" class="slide">
+        <button class="prev" onclick="plusSlides('slideshow-halfmarathon', -1)">&#10094;</button>
+        <button class="next" onclick="plusSlides('slideshow-halfmarathon', 1)">&#10095;</button>
+      </div>
+      <p>From barely running two miles without stopping to finishing 13.1 miles in 1 hour and 35 minutes, my half marathon journey was a challenge that taught me the importance of delayed gratification and discipline. After my first race attempt was canceled due to safety concerns, I committed to three months of focused training with the goal of breaking 2 hours. By race day, I not only surpassed my goal but I cut off 25 minutes from my target time.</p>
+    </div>
+    <div class="experience">
+      <h3>SAIL Summit 1</h3>
+      <div class="keywords">
+        <span class="keyword">Adventure</span>
+        <span class="keyword">Resilience</span>
+        <span class="keyword">Determination</span>
+      </div>
+      <div class="slideshow" id="slideshow-sailsummit1">
+        <img src="SAIL%20Summit%201/IMG_0042.JPG" alt="SAIL Summit 1 Photo 1" class="slide active">
+        <img src="SAIL%20Summit%201/IMG_3932.JPG" alt="SAIL Summit 1 Photo 2" class="slide">
+        <img src="SAIL%20Summit%201/IMG_3968.JPG" alt="SAIL Summit 1 Photo 3" class="slide">
+        <img src="SAIL%20Summit%201/IMG_0508.jpg" alt="SAIL Summit 1 Photo 3" class="slide">
+
+        <!-- Add more images as needed -->
+        <button class="prev" onclick="plusSlides('slideshow-sailsummit1', -1)">&#10094;</button>
+        <button class="next" onclick="plusSlides('slideshow-sailsummit1', 1)">&#10095;</button>
+      </div>
+      <p>What began as a small challenge with just three people on a 30 mile hike in Arkansas turned into the start of a dream. Over two intense days, myself and 2 friends hiked through the night, crossed freezing rivers in darkness, and walked alongside firefighters as controlled burns lit up the horizon. On the second day, we pushed through a 26 mile stretch in one go with the howls of coyotes echoing through the valley's below us. This experience tested my limits and ultimately inspired my goal of becoming a SAIL Leadership Director to plan larger expeditions which would come later.</p>
+    </div>
+    <div class="experience">
+      <h3>The Woodlands Sprint Triathlon</h3>
+      <div class="keywords">
+        <span class="keyword">Versatility</span>
+        <span class="keyword">Preparation</span>
+        <span class="keyword">Adaptability</span>
+      </div>
+      <div class="slideshow" id="slideshow-triathlon">
+        <img src="Triathlon/IMG_4419.JPG" alt="Triathlon Photo 1" class="slide active">
+        <img src="Triathlon/IMG_4432.JPG" alt="Triathlon Photo 2" class="slide">
+        <!-- Add more images as needed -->
+        <button class="prev" onclick="plusSlides('slideshow-triathlon', -1)">&#10094;</button>
+        <button class="next" onclick="plusSlides('slideshow-triathlon', 1)">&#10095;</button>
+      </div>
+      <p>With no prior long distance race experience and far from peak fitness, I set the bold goal of finishing top 10 in my age group for a sprint triathlon. My only bike was a 20-year old Schwinn rusted from months sitting outside. On race day I passed other racers proudly to the sound of my chain screeching across my gear shift. I finished 9th in my age group achieving my goal. The very next day I boarded a plane to France to begin a study abroad experience that would change the way I view world-wide engineering.</p>
+    </div>
+    <div class="experience">
+      <h3>Woodworking</h3>
+      <div class="keywords">
+        <span class="keyword">Craftsmanship</span>
+        <span class="keyword">Creative Problem Solving</span>
+        <span class="keyword">Restoration</span>
+      </div>
+      <div class="slideshow" id="slideshow-woodworking">
+        <img src="WoodWorking/IMG_3846.jpg" alt="Woodworking Photo 5" class="slide active">
+        <img src="WoodWorking/IMG_3753.jpg" alt="Woodworking Photo 1" class="slide">
+        <img src="WoodWorking/IMG_3762.jpg" alt="Woodworking Photo 2" class="slide">
+        <img src="WoodWorking/IMG_3843.jpg" alt="Woodworking Photo 4" class="slide">
+        <img src="WoodWorking/IMG_3826.JPG" alt="Woodworking Photo 3" class="slide">
+        <button class="prev" onclick="plusSlides('slideshow-woodworking', -1)">&#10094;</button>
+        <button class="next" onclick="plusSlides('slideshow-woodworking', 1)">&#10095;</button>
+      </div>
+      <p>During the winter break of my sophomore year, I discovered a passion for woodworking and restoration. After being inspired by YouTube restoration videos, I purchased a $5 rusted axe from Facebook Marketplace and restored it to a new functional tool. This grew into building a custom side table for my apartment, a cat scratching post for my roommate's cat, and a personal storage box I use daily. Working with my hands to create and restore practical items was frustrating at times but ultimately became a therapeutic creative outlet.</p>
+    </div>
+    
+  </section>
+
+  <section class="section timeline" id="timeline">
+    <h2>Timeline</h2>
+    <div class="gantt-chart">
+      <div class="gantt-header">
+        <div class="gantt-row">
+          <div class="gantt-side">Activity</div>
+          <div class="year-container">
+            <div class="year-column">
+              <div class="year">2023-2024</div>
+              <div class="year-months">
+                <div class="month">Aug</div>
+                <div class="month">Sep</div>
+                <div class="month">Oct</div>
+                <div class="month">Nov</div>
+                <div class="month">Dec</div>
+                <div class="month">Jan</div>
+                <div class="month">Feb</div>
+                <div class="month">Mar</div>
+                <div class="month">Apr</div>
+                <div class="month">May</div>
+                <div class="month">Jun</div>
+                <div class="month">Jul</div>
+              </div>
+            </div>
+            <div class="year-column">
+              <div class="year">2024-2025</div>
+              <div class="year-months">
+                <div class="month">Aug</div>
+                <div class="month">Sep</div>
+                <div class="month">Oct</div>
+                <div class="month">Nov</div>
+                <div class="month">Dec</div>
+                <div class="month">Jan</div>
+                <div class="month">Feb</div>
+                <div class="month">Mar</div>
+                <div class="month">Apr</div>
+                <div class="month">May</div>
+                <div class="month">Jun</div>
+                <div class="month">Jul</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gantt-body">
+        <div class="gantt-row">
+          <div class="gantt-side">BMEL Research</div>
+          <div class="gantt-timeline">
+            <div class="bar" style="left: 0%; width: 34%;"></div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-side">Woodworking</div>
+          <div class="gantt-timeline">
+            <div class="bar" style="left: 16.67%; width: 8.33%;"></div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-side">The Woodlands Sprint Triathlon</div>
+          <div class="gantt-timeline">
+            <div class="bar" style="left: 16.67%; width: 25%;"></div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-side">SAIL Summit Spring '24</div>
+          <div class="gantt-timeline">
+            <div class="bar" style="left: 25%; width: 8.33%;"></div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-side">SAIL Summit Fall '24</div>
+          <div class="gantt-timeline">
+            <div class="bar" style="left: 33.33%; width: 37.5%;"></div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-side">Study Abroad</div>
+          <div class="gantt-timeline">
+            <div class="bar" style="left: 37.5%; width: 8.33%;"></div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-side">HEGP Global Ambassador</div>
+          <div class="gantt-timeline">
+            <div class="bar" style="left: 50%; width: 41.67%;"></div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-side">Slolympics</div>
+          <div class="gantt-timeline">
+            <div class="bar" style="left: 58.33%; width: 25%;"></div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-side">The Woodlands Half Marathon</div>
+          <div class="gantt-timeline">
+            <div class="bar" style="left: 66.67%; width: 12.5%;"></div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-side">SAIL Summit Spring '25</div>
+          <div class="gantt-timeline">
+            <div class="bar" style="left: 70.83%; width: 12.5%;"></div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-side">Engineering MBA Acceptance</div>
+          <div class="gantt-timeline">
+            <div class="bar" style="left: 70.83%; width: 4.17%;"></div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-side">Mortenson Internship</div>
+          <div class="gantt-timeline">
+            <div class="bar" style="left: 87.5%; width: 12.5%;"></div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-side">Wood Consulting</div>
+          <div class="gantt-timeline">
+            <div class="bar" style="left: 91.67%; width: 8.33%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="library" style="background: linear-gradient(145deg, #2a3547 0%, #1f2937 100%);">
+    <h2 style="color: #ffe082;">2025 Library</h2>
+    
+      <div style="margin-top: 40px;">
+      <h3 style="color: var(--secondary-color); font-size: 1.4rem; margin-bottom: 25px;">Currently Reading</h3>
+      <div class="books-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 25px;">
+        <div class="book-cover" style="background: rgba(255,255,255,0.03); border-radius: 10px; overflow: hidden; transition: all 0.3s ease; aspect-ratio: 2/3; position: relative;">
+          <img src="Currently Reading/Nexus.jpg" alt="Nexus Book Cover" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="book-info" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); padding: 15px; transform: translateY(100%); transition: transform 0.3s ease;">
+            <h4 style="color: #ffe082; margin: 0; font-size: 1rem;">Nexus</h4>
+            <p style="color: var(--text-color); margin: 5px 0 0 0; font-size: 0.9rem;">Yuval Noah Harari</p>
+          </div>
+        </div>
+
+        <div class="book-cover" style="background: rgba(255,255,255,0.03); border-radius: 10px; overflow: hidden; transition: all 0.3s ease; aspect-ratio: 2/3; position: relative;">
+          <img src="Currently Reading/the art of war.jpg" alt="The Art of War Book Cover" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="book-info" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); padding: 15px; transform: translateY(100%); transition: transform 0.3s ease;">
+            <h4 style="color: #ffe082; margin: 0; font-size: 1rem;">The Art of War</h4>
+            <p style="color: var(--text-color); margin: 5px 0 0 0; font-size: 0.9rem;">Sun Tzu</p>
+          </div>
+        </div>
+      </div>
+    </div>    <div style="margin-top: 40px;">
+      <h3 style="color: var(--secondary-color); font-size: 1.4rem; margin-bottom: 25px;">Completed Books</h3>
+      <div class="books-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 25px;">
+        <div class="book-cover" style="background: rgba(255,255,255,0.03); border-radius: 10px; overflow: hidden; transition: all 0.3s ease; aspect-ratio: 2/3; position: relative;">
+          <img src="Book%20Covers/Backstage%20leadership.jpg" alt="Backstage Leadership" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="book-info" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); padding: 15px; transform: translateY(100%); transition: transform 0.3s ease;">
+            <h4 style="color: #ffe082; margin: 0; font-size: 1rem;">Backstage Leadership</h4>
+            <p style="color: var(--text-color); margin: 5px 0 0 0; font-size: 0.9rem;">Charles Galunic</p>
+          </div>
+        </div>
+
+        <div class="book-cover" style="background: rgba(255,255,255,0.03); border-radius: 10px; overflow: hidden; transition: all 0.3s ease; aspect-ratio: 2/3; position: relative;">
+          <img src="Book%20Covers/Range.jpg" alt="Range" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="book-info" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); padding: 15px; transform: translateY(100%); transition: transform 0.3s ease;">
+            <h4 style="color: #ffe082; margin: 0; font-size: 1rem;">Range</h4>
+            <p style="color: var(--text-color); margin: 5px 0 0 0; font-size: 0.9rem;">David Epstein</p>
+          </div>
+        </div>
+
+        <div class="book-cover" style="background: rgba(255,255,255,0.03); border-radius: 10px; overflow: hidden; transition: all 0.3s ease; aspect-ratio: 2/3; position: relative;">
+          <img src="Book%20Covers/Revenge%20of%20the%20tipping%20point.jpg" alt="Revenge of the Tipping Point" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="book-info" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); padding: 15px; transform: translateY(100%); transition: transform 0.3s ease;">
+            <h4 style="color: #ffe082; margin: 0; font-size: 1rem;">Revenge of the Tipping Point</h4>
+            <p style="color: var(--text-color); margin: 5px 0 0 0; font-size: 0.9rem;">Malcolm Gladwell</p>
+          </div>
+        </div>
+
+        <div class="book-cover" style="background: rgba(255,255,255,0.03); border-radius: 10px; overflow: hidden; transition: all 0.3s ease; aspect-ratio: 2/3; position: relative;">
+          <img src="Book%20Covers/The%20anxious%20generation.jpg" alt="The Anxious Generation" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="book-info" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); padding: 15px; transform: translateY(100%); transition: transform 0.3s ease;">
+            <h4 style="color: #ffe082; margin: 0; font-size: 1rem;">The Anxious Generation</h4>
+            <p style="color: var(--text-color); margin: 5px 0 0 0; font-size: 0.9rem;">Jonathan Haidt</p>
+          </div>
+        </div>
+
+        <div class="book-cover" style="background: rgba(255,255,255,0.03); border-radius: 10px; overflow: hidden; transition: all 0.3s ease; aspect-ratio: 2/3; position: relative;">
+          <img src="Book%20Covers/the%20feynman%20lectures%20volume%20iii.jpg" alt="The Feynman Lectures Volume III" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="book-info" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); padding: 15px; transform: translateY(100%); transition: transform 0.3s ease;">
+            <h4 style="color: #ffe082; margin: 0; font-size: 1rem;">The Feynman Lectures Vol. III</h4>
+            <p style="color: var(--text-color); margin: 5px 0 0 0; font-size: 0.9rem;">Richard Feynman</p>
+          </div>
+        </div>
+
+        <div class="book-cover" style="background: rgba(255,255,255,0.03); border-radius: 10px; overflow: hidden; transition: all 0.3s ease; aspect-ratio: 2/3; position: relative;">
+          <img src="Book%20Covers/The%20mckinsey%20mind.jpg" alt="The McKinsey Mind" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="book-info" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); padding: 15px; transform: translateY(100%); transition: transform 0.3s ease;">
+            <h4 style="color: #ffe082; margin: 0; font-size: 1rem;">The McKinsey Mind</h4>
+            <p style="color: var(--text-color); margin: 5px 0 0 0; font-size: 0.9rem;">Ethan Rasiel & Paul Friga</p>
+          </div>
+        </div>
+
+        <div class="book-cover" style="background: rgba(255,255,255,0.03); border-radius: 10px; overflow: hidden; transition: all 0.3s ease; aspect-ratio: 2/3; position: relative;">
+          <img src="Book%20Covers/The%20mckinsey%20way.jpg" alt="The McKinsey Way" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="book-info" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); padding: 15px; transform: translateY(100%); transition: transform 0.3s ease;">
+            <h4 style="color: #ffe082; margin: 0; font-size: 1rem;">The McKinsey Way</h4>
+            <p style="color: var(--text-color); margin: 5px 0 0 0; font-size: 0.9rem;">Ethan Rasiel</p>
+          </div>
+        </div>
+
+        <div class="book-cover" style="background: rgba(255,255,255,0.03); border-radius: 10px; overflow: hidden; transition: all 0.3s ease; aspect-ratio: 2/3; position: relative;">
+          <img src="Book Covers/The psychology of Money.jpg" alt="The Psychology of Money" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="book-info" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); padding: 15px; transform: translateY(100%); transition: transform 0.3s ease;">
+            <h4 style="color: #ffe082; margin: 0; font-size: 1rem;">The Psychology of Money</h4>
+            <p style="color: var(--text-color); margin: 5px 0 0 0; font-size: 0.9rem;">Morgan Housel</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .book-cover:hover .book-info {
+        transform: translateY(0);
+      }
+      .book-cover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      }
+    </style>
+  </section>
+
+  <script>
+function plusSlides(slideshowId, n) {
+  const container = document.getElementById(slideshowId);
+  const slides = container.querySelectorAll('.slide');
+  let current = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+  
+  // Calculate next slide index
+  let next = (current + n + slides.length) % slides.length;
+  
+  // Remove previous classes
+  slides.forEach(slide => slide.classList.remove('prev'));
+  
+  // Update classes for transition
+  slides[current].classList.remove('active');
+  slides[current].classList.add('prev');
+  slides[next].classList.add('active');
+  
+  // Clean up previous slide class after transition
+  setTimeout(() => {
+    slides[current].classList.remove('prev');
+  }, 500);
+}
+  </script>
+</body>
+</html>
